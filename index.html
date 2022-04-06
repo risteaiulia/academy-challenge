@@ -10,32 +10,37 @@
   <script rel="preconnect" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
   <link rel="stylesheet" href="styles/index.css" />
-  <link rel="preconnect" href="https://www.youtube.com/embed/YadeD-_Cm9I">
 
-  <!-- <script async>
 
-    // anti flicker
-    const antiflicker = () => {
-      document.body.style.visibility = 'hidden';
-      window.addEventListener('load', () => {
-        document.body.removeAttribute('style');
-        console.log('rxe')
+  <script>
+    let style = document.createElement("style"),
+        css = "body{visibility:hidden}";
+      document.head.appendChild(style);
+      style.type = "text/css";
+      style.appendChild(document.createTextNode(css));
+
+      // anti flicker
+      window.addEventListener("load", () => {
+        style.innerHTML = "";
+        console.log("rxe");
       });
-    }
-    antiflicker();
-  </script> -->
+  </script>
+
+  <link rel="preload" as="image" href="images/banner.png" imagesizes="50vw">
+  <link rel="preload" as="image" href="images/image-tree.jpg" imagesizes="50vw">
+
+  <link rel="preconnect" href="https://www.youtube.com/embed/YadeD-_Cm9I">
+  <input type="hidden" id="csrf_token" value="ZGlkIHlvdSBmaW5kIG1lPwo=" />
 
 </head>
 <body>
-  <link rel="preload" as="image" href="images/banner.png" imagesizes="50vw">
-  <link rel="preload" as="image" href="images/image-tree.jpg" imagesizes="50vw">
-  <input type="hidden" id="csrf_token" value="ZGlkIHlvdSBmaW5kIG1lPwo=" />
   <header>
     <a class="logo" href="#">
       <svg class="logo__svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
           style=" fill:#000000;"
           width="80" height="60">
 
+          
           <defs>
             <circle id="circle1" cx="0" cy="0" r="5" />
 
@@ -155,9 +160,7 @@
       <article class="gridbox__item">
         <section class="card">
           <picture>
-            <source srcset="images/image-tree.avif"  type="image/avif"/>
-            <source srcset="images/image-tree.webp" type="image/webp"/>
-            <img data-src="images/image-tree.jpg" alt="leaf" class="card__img" loading="lazy">
+            <img data-src="images/image-tree.avif" alt="leaf" class="card__img" loading="lazy">
           </picture>
           <hr>
         </section>
@@ -165,9 +168,7 @@
       <article class="gridbox__item">
         <section class="card">
           <picture>
-            <source srcset="images/image-tree.avif"  type="image/avif"/>
-            <source srcset="images/image-tree.webp" type="image/webp"/>
-            <img data-src="images/image-tree.jpg" alt="leaf" class="card__img" loading="lazy">
+            <img data-src="images/image-tree.avif" alt="leaf" class="card__img" loading="lazy">
           </picture>
           <hr>
         </section>
