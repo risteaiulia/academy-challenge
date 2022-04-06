@@ -86,7 +86,6 @@ header {
   }
 
   main img {
-    /* Only render when in viewport */
     content-visibility: auto;
   }
 
