@@ -88,26 +88,42 @@
 
   <main>
     <section class="hero">
-      <img data-src="banner.png" alt="" class="hero__img">
+      <picture>   
+        <source srcset="banner.avif" type="image/avif"/>
+        <source srcset="banner.webp" type="image/webp"/>
+        <img data-src="banner.png" alt="" class="hero__img" loading="lazy">
+      </picture>
     </section>
     <script rel="preconnect" src="script/hero.js"></script>
 
     <section class="gridbox">
       <article class="gridbox__item">
         <section class="card">
-          <img data-src="image-tree.jpg" alt="" class="card__img">
+          <picture>
+            <source srcset="image-tree.avif"  type="image/avif"/>
+            <source srcset="image-tree.webp" type="image/webp"/>
+            <img data-src="image-tree.jpg" alt="leaf" class="card__img" loading="lazy">
+          </picture>
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <img data-src="image-tree.jpg" alt="" class="card__img">
+          <picture>
+            <source srcset="image-tree.avif"  type="image/avif"/>
+            <source srcset="image-tree.webp" type="image/webp"/>
+            <img data-src="image-tree.jpg" alt="leaf" class="card__img" loading="lazy">
+          </picture>
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <img data-src="image-tree.jpg" alt="" class="card__img">
+          <picture>
+            <source srcset="image-tree.avif"  type="image/avif"/>
+            <source srcset="image-tree.webp" type="image/webp"/>
+            <img data-src="image-tree.jpg" alt="leaf" class="card__img" loading="lazy">
+          </picture>
           <hr>
         </section>
       </article>

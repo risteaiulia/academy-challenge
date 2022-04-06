@@ -85,5 +85,10 @@ header {
     width: 100%;
   }
 
+  main img {
+    /* Only render when in viewport */
+    content-visibility: auto;
+  }
+
 
 
