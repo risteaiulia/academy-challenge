@@ -106,8 +106,12 @@
     <section class="hero">
       <picture>   
         <source srcset="banner.avif" type="image/avif"/>
-        <source srcset="banner.webp" type="image/webp"/>
-        <img data-src="banner.png" alt="" class="hero__img" loading="lazy">
+        <source type="image/webp" 
+        srcset="         
+        banner_360.webp 360w,
+        banner_640.webp 640w,
+        banner_800.webp 800w" />
+        <img data-src="banner.png" alt=""   width="1920" height="1280" class="hero__img" loading="lazy">
       </picture>
     </section>
     <script rel="preconnect" src="script/hero.js"></script>
