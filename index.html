@@ -6,26 +6,29 @@
   <title>Get Your &lt;head&gt; Straight</title>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
+  <link rel="preconnect" xmlns="http://www.w3.org/2000/svg" fetchpriority="high">
+  <link rel="preconnect" href="https://www.youtube.com/embed/YadeD-_Cm9I">
+
   <script async src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-  <script>
-    let style = document.createElement("style"),
-        css = "body{visibility:hidden}";
-      document.head.appendChild(style);
-      style.type = "text/css";
-      style.appendChild(document.createTextNode(css));
+  <script async>
 
-      // anti flicker
-      window.addEventListener("load", () => {
-        style.innerHTML = "";
-        console.log("rxe");
+    // anti flicker
+    const antiflicker = () => {
+      document.body.style.visibility = 'hidden';
+      window.addEventListener('load', () => {
+        document.body.removeAttribute('style');
+        console.log('rxe')
       });
+    }
+    // wait(1000);
+    antiflicker();
   </script>
 
   <link rel="stylesheet" href="styles/index.css" />
-  <link rel="preload" as="image" href="images/banner.png" imagesizes="50vw">
-  <link rel="preload" as="image" href="images/image-tree.jpg" imagesizes="50vw">
-  <link rel="preconnect" href="https://www.youtube.com/embed/YadeD-_Cm9I">
+  <link rel="preload" as="image" href="images/banner.png" fetchpriority="high">
+  <link rel="preload" as="image" href="images/image-tree.jpg" fetchpriority="high">
+
   <input type="hidden" id="csrf_token" value="ZGlkIHlvdSBmaW5kIG1lPwo=" />
 
 </head>
@@ -104,41 +107,27 @@
   </header>
 
   <main>
-    <section class="hero">
-      <picture>   
-        <source srcset="images/banner.avif" type="image/avif"/>
-        <source type="image/webp" 
-        srcset="         
-        images/banner_360.webp 360w,
-        images/banner_640.webp 640w,
-        images/banner_800.webp 800w" />
-        <img data-src="images/banner.png"  alt="" class="hero__img"  loading="lazy">
-      </picture>
+    <section class="hero"> 
+        <img loading="lazy" data-src="images/banner.avif"  alt="" class="hero__img"  >
     </section>
-    <script rel="preconnect" src="script/hero.js"></script>
+    <script async src="script/hero.js"></script>
 
     <section class="gridbox">
       <article class="gridbox__item">
         <section class="card">
-          <picture>
             <img loading="lazy" data-src="images/image-tree.avif" alt="leaf" class="card__img" >
-          </picture>
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <picture>
             <img loading="lazy" data-src="images/image-tree.avif" alt="leaf" class="card__img" >
-          </picture>
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <picture>
             <img loading="lazy" data-src="images/image-tree.avif" alt="leaf" class="card__img" >
-          </picture>
           <hr>
         </section>
       </article>
@@ -149,33 +138,25 @@
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <picture>
             <img loading="lazy" data-src="images/image-tree.avif" alt="leaf" class="card__img" loading="lazy">
-          </picture>
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <picture>
             <img loading="lazy" data-src="images/image-tree.avif" alt="leaf" class="card__img" loading="lazy">
-          </picture>
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <picture>
-            <img loading="lazy" data-src="images/image-tree.avif" alt="" class="card__img">
-          </picture>
+          <img loading="lazy" data-src="images/image-tree.avif" alt="" class="card__img">
           <hr>
         </section>
       </article>
       <article class="gridbox__item">
         <section class="card">
-          <picture>
             <img loading="lazy" data-src="images/image-tree.avif" alt="" class="card__img">
-          </picture>
           <hr>
         </section>
       </article>
